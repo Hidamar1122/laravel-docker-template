@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/todo', function () {
+    echo 'Hello World!';
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

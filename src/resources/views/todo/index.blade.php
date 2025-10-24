@@ -3,6 +3,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
             <p class="text-left">
+              @dd($todos)
               <a class="btn btn-success" href="{{ route('todo.create') }}">ToDoを追加</a>
             </p>
             <div class="card">

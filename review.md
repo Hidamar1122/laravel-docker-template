@@ -12,7 +12,7 @@ collection クラスのインスタンス
 
 ### 配列の代わりに Collection クラスを使用するメリットは
 
-読みやすくなる
+Collection クラス内に配列操作が容易にできるメソッドが定義されているので、インスタンス化した状態にしておけば、配列のある程度の操作が、特定のメソッドを呼び出すだけでできるようになるというメリット
 
 ### view 関数の第 1・第 2 引数の指定と何をしているか
 
@@ -38,7 +38,7 @@ Todo インスタンスの各プロパティに一括で代入
 
 ### save メソッドで実行している SQL は何か
 
-insert into 'todos'
+nsert into todos value('content')
 
 ### redirect()->route()は何をしているか
 
@@ -52,7 +52,8 @@ route の引数に記述したページにリダイレクトする
 
 ### マイグレーションファイルの up()、down()は何のコマンドを実行した時に呼び出されるのか
 
-php artisan migrate
+php artisan migrate は up()
+php artisan migrate:rollback は down()
 
 ### Seeder クラスの役割は何か
 
@@ -73,4 +74,4 @@ CSRF 対策
 
 ### {{ }}とは何の省略系か
 
-echo e()
+エスケープ処理

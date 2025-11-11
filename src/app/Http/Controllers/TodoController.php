@@ -49,8 +49,19 @@ class TodoController extends Controller
 
     public function edit($id)
     {
-        $todo = new Todo();
+        $todo = $this->todo->find($id);
         // dd($todo);
         return view('todo.edit', ['todo' => $todo]);
+    }
+
+    public function update(Request $request, $id) // 第1引数: リクエスト情報の取得　第2引数: ルートパラメータの取得
+    {
+        // TODO: リクエストされた値を取得
+        $inputs = $request->all();
+
+        $todo = $this->todo->find($id);
+
+        $todo->fill($inputs)->save();
+        return redirect()->route('todo.show', $todo->id);
     }
 }
